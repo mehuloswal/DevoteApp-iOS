@@ -17,6 +17,7 @@
 		2A9A45FD289A9268003F2424 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A45FA289A9268003F2424 /* sound-ding.mp3 */; };
 		2A9A45FE289A9268003F2424 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A45FB289A9268003F2424 /* sound-rise.mp3 */; };
 		2A9A4607289A98E2003F2424 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A4606289A98E2003F2424 /* sound-rise.mp3 */; };
+		2A9A460D289AEF12003F2424 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A460C289AEF12003F2424 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2A9A45FB289A9268003F2424 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		2A9A4605289A9345003F2424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A9A4606289A98E2003F2424 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
+		2A9A460C289AEF12003F2424 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		2A9A4602289A92CA003F2424 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				2A9A460C289AEF12003F2424 /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				2A9A45F0289A911E003F2424 /* Persistence.swift in Sources */,
 				2A9A45E9289A911D003F2424 /* ContentView.swift in Sources */,
+				2A9A460D289AEF12003F2424 /* Constant.swift in Sources */,
 				2A9A45F3289A911E003F2424 /* Devote.xcdatamodeld in Sources */,
 				2A9A45E7289A911D003F2424 /* DevoteApp.swift in Sources */,
 			);
