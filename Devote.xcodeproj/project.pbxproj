@@ -16,6 +16,7 @@
 		2A9A45FC289A9268003F2424 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A45F9289A9268003F2424 /* sound-tap.mp3 */; };
 		2A9A45FD289A9268003F2424 /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A45FA289A9268003F2424 /* sound-ding.mp3 */; };
 		2A9A45FE289A9268003F2424 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A45FB289A9268003F2424 /* sound-rise.mp3 */; };
+		2A9A4607289A98E2003F2424 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A9A4606289A98E2003F2424 /* sound-rise.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2A9A45FA289A9268003F2424 /* sound-ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-ding.mp3"; sourceTree = "<group>"; };
 		2A9A45FB289A9268003F2424 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		2A9A4605289A9345003F2424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2A9A4606289A98E2003F2424 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				2A9A45FA289A9268003F2424 /* sound-ding.mp3 */,
 				2A9A45FB289A9268003F2424 /* sound-rise.mp3 */,
+				2A9A4606289A98E2003F2424 /* sound-rise.mp3 */,
 				2A9A45F9289A9268003F2424 /* sound-tap.mp3 */,
 			);
 			path = Sound;
@@ -193,6 +196,7 @@
 				2A9A45FE289A9268003F2424 /* sound-rise.mp3 in Resources */,
 				2A9A45FD289A9268003F2424 /* sound-ding.mp3 in Resources */,
 				2A9A45FC289A9268003F2424 /* sound-tap.mp3 in Resources */,
+				2A9A4607289A98E2003F2424 /* sound-rise.mp3 in Resources */,
 				2A9A45EE289A911E003F2424 /* Preview Assets.xcassets in Resources */,
 				2A9A45EB289A911E003F2424 /* Assets.xcassets in Resources */,
 			);
