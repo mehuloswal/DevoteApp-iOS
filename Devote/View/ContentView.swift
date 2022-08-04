@@ -9,70 +9,101 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @State var task: String = ""
+    private var isButtonDisabled: Bool {
+        task.isEmpty
+    }
+    
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         NavigationView {
             VStack {
+                VStack(spacing: 16){
+                    TextField("New Task", text: $task)
+                        .padding()
+                        .background(
+                            Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                    
+                    Button(action:{
+                        addItem()
+                    }, label: {
+                        Spacer()
+                        Text("Save")
+                        Spacer()
+                    })
+                    .disabled(isButtonDisabled)
+                    .padding()
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .background(isButtonDisabled ? Color.gray : Color.pink)
+                    .cornerRadius(10)
+                }.padding()
                 List {
                     ForEach(items) { item in
-                        NavigationLink {
+                        VStack(alignment: .leading){
+                            Text(item.task ?? "")
+                                .font(.headline)
+                                .fontWeight(.bold)
                             Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            Text(item.timestamp!, formatter: itemFormatter)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
                         }
                     }
-                    .onDelete(perform: deleteItems)
-                }
                 
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-        }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                .onDelete(perform: deleteItems)
             }
         }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        .navigationBarTitle("Daily Tasks", displayMode: .large)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
             }
+            
+        }
+        
+    }
+}
+
+private func addItem() {
+    withAnimation {
+        let newItem = Item(context: viewContext)
+        newItem.timestamp = Date()
+        newItem.task = task
+        newItem.completion = false
+        newItem.id = UUID()
+        do {
+            try viewContext.save()
+        } catch {
+            
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        task = ""
+        hideKeyboard()
+    }
+}
+
+private func deleteItems(offsets: IndexSet) {
+    withAnimation {
+        offsets.map { items[$0] }.forEach(viewContext.delete)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
+}
 }
 
 
